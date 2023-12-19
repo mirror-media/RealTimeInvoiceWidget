@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'widget/real_time_invoice_widget.dart';
+import 'package:real_time_invoice_widget/real_time_invoice/real_time_invoice_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +33,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.grey,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
+        children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 28),
             child: RealTimeInvoiceWidget(
@@ -43,17 +42,6 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
 
-          // GridView.builder(
-          //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //     crossAxisCount: 2, // 列數
-          //     crossAxisSpacing: 8.0, // 列之間的間距
-          //     mainAxisSpacing: 8.0, // 行之間的間距
-          //   ),
-          //   itemCount: 10, // 網格中的項目數量
-          //   itemBuilder: (BuildContext context, int index) {
-          //     return GridItem(index: index);
-          //   },
-          // )
         ],
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
