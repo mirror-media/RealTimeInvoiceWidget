@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:real_time_invoice_widget/core/enum/organize.dart';
+import 'package:real_time_invoice_widget/data/enum/organize.dart';
+
 
 class CandidateWidget extends StatelessWidget {
   const CandidateWidget({super.key, this.imagePath, required this.organize});

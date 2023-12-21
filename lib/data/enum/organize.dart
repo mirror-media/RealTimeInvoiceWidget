@@ -1,4 +1,6 @@
-import 'package:real_time_invoice_widget/core/value/image_path.dart';
+
+
+import 'package:real_time_invoice_widget/data/value/image_path.dart';
 
 enum Organize { tpp, kmt, dpp }
 
