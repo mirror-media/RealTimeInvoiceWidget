@@ -1,0 +1,16 @@
+import 'package:real_time_invoice_widget/model/election_row_data.dart';
+
+class ElectionData {
+  String? title;
+  List<ElectionRowData>? electionRowDataList;
+
+  ElectionData({this.title, this.electionRowDataList});
+
+  factory ElectionData.fromJson(Map<String, dynamic> json) {
+    List<ElectionRowData> list = [];
+    for (var resultItem in json['result']) {
+      list.add(ElectionRowData.fromJson(resultItem));
+    }
+    return ElectionData(title: json['title'], electionRowDataList: list);
+  }
+}

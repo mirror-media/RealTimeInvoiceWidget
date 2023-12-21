@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.6.3
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:
@@ -59,12 +60,13 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-  - assets/image/dpp_logo.png
-  - assets/image/tpp_logo.png
-  - assets/image/kmt_logo.png
-  - assets/image/number1_icon.png
-  - assets/image/number2_icon.png
-  - assets/image/number3_icon.png
+  - assets/image/election/dpp_logo.png
+  - assets/image/election/tpp_logo.png
+  - assets/image/election/kmt_logo.png
+  - assets/image/election/number1_icon.png
+  - assets/image/election/number2_icon.png
+  - assets/image/election/number3_icon.png
+  - assets/image/election/elected_icon.png
 
 
   # To add assets to your application, add an assets section, like this:

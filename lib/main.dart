@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:real_time_invoice_widget/main_binding.dart';
 import 'package:real_time_invoice_widget/real_time_invoice/real_time_invoice_widget.dart';
 
 void main() {
   runApp(const MyApp());
+
+
 }
 
 class MyApp extends StatelessWidget {
@@ -11,12 +15,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),
+      initialBinding: MainBinding(),
     );
   }
 }
@@ -37,8 +43,6 @@ class MyHomePage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 28),
             child: RealTimeInvoiceWidget(
-              title: '2024 總統大選鏡電視即時開票',
-              message: '20:00  賴清德宣布拆違建',
             ),
           ),
 
