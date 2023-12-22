@@ -30,7 +30,7 @@ class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
             height: 24,
             width: double.infinity,
             child: Text(
-              '2024 總統大選鏡電視即時開票',
+              '2024總統及立委大選開票',
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: 'Noto Sans CJK TC',
