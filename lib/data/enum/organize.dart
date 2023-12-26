@@ -43,9 +43,9 @@ extension OrganizeExtension on Organize {
       case Organize.tpp:
         return ImagePath.number1Icon;
       case Organize.kmt:
-        return ImagePath.number2Icon;
-      case Organize.dpp:
         return ImagePath.number3Icon;
+      case Organize.dpp:
+        return ImagePath.number2Icon;
     }
   }
 }
