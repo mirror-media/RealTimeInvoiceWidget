@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:real_time_invoice_widget/data/enum/organize.dart';
 
-
 class CandidateWidget extends StatelessWidget {
-  const CandidateWidget({super.key, this.imagePath, required this.organize});
+  const CandidateWidget(
+      {super.key,
+      this.imagePath,
+      required this.organize,
+      required this.isPackage});
 
   final Organize organize;
   final String? imagePath;
+  final bool isPackage;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +29,19 @@ class CandidateWidget extends StatelessWidget {
           width: 42,
           child: Row(
             children: [
-              Image.asset(organize.logoPath(), width: 8, height: 8),
+              Image.asset(
+                organize.logoPath(),
+                width: 8,
+                height: 8,
+                package: isPackage ? 'real_time_invoice_widget' : null,
+              ),
               const Spacer(),
-              Image.asset(organize.numberIcon(), width: 20, height: 20),
+              Image.asset(
+                organize.numberIcon(),
+                width: 20,
+                height: 20,
+                package: isPackage ? 'real_time_invoice_widget' : null,
+              ),
             ],
           ),
         ),
