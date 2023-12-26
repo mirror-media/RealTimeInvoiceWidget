@@ -21,7 +21,7 @@ class ElectionDataProvider extends GetConnect {
   ElectionDataProvider(String this.apiUrl);
 
   Future<ElectionData?> getElectionData() async {
-    print(apiUrl);
+
     if (apiUrl == null) return null;
 
     final response = await _client.get(Uri.parse(apiUrl!));

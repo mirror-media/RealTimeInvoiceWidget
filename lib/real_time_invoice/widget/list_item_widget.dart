@@ -40,7 +40,7 @@ class ListItemWidget extends StatelessWidget {
               ? Image.asset(ImagePath.electedIcon)
               : Align(
                   alignment: Alignment.center,
-                  child: Text(electionRowData.renderText[0],
+                  child: Text(electionRowData.renderText[1],
                       style: fontStyle)),
         ),
         Expanded(
