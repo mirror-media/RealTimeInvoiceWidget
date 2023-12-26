@@ -65,27 +65,36 @@ class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
             direction: Axis.horizontal,
             children: [
               Expanded(flex: 1, child: Container()),
-              const Expanded(
+              Expanded(
                   flex: 1,
-                  child: CandidateWidget(
-                    organize: Organize.tpp,
-                  )),
+                  child: Obx(() {
+                    return CandidateWidget(
+                      organize: Organize.tpp,
+                      isPackage: controller.isPackage.value,
+                    );
+                  })),
               const SizedBox(
                 width: 7,
               ),
-              const Expanded(
+              Expanded(
                   flex: 1,
-                  child: CandidateWidget(
-                    organize: Organize.dpp,
-                  )),
+                  child: Obx(() {
+                    return CandidateWidget(
+                      organize: Organize.dpp,
+                      isPackage: controller.isPackage.value,
+                    );
+                  })),
               const SizedBox(
                 width: 7,
               ),
-              const Expanded(
+              Expanded(
                   flex: 1,
-                  child: CandidateWidget(
-                    organize: Organize.kmt,
-                  )),
+                  child: Obx(() {
+                    return CandidateWidget(
+                      organize: Organize.kmt,
+                      isPackage: controller.isPackage.value,
+                    );
+                  })),
               const SizedBox(
                 width: 7,
               ),
