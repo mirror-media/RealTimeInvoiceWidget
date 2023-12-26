@@ -6,14 +6,15 @@ import 'package:real_time_invoice_widget/real_time_invoice/widget/list_item_widg
 import 'real_time_invoice_controller.dart';
 
 class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
-  const RealTimeInvoiceWidget({
-    super.key,
-    this.getMoreButtonClick,
-    this.backgroundColor,
-  });
+  const RealTimeInvoiceWidget(
+      {super.key,
+      this.getMoreButtonClick,
+      this.backgroundColor,
+      this.isPackage = false});
 
   final Function()? getMoreButtonClick;
   final Color? backgroundColor;
+  final bool? isPackage;
 
   @override
   Widget build(BuildContext context) {
@@ -66,35 +67,32 @@ class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
             children: [
               Expanded(flex: 1, child: Container()),
               Expanded(
-                  flex: 1,
-                  child: Obx(() {
-                    return CandidateWidget(
-                      organize: Organize.tpp,
-                      isPackage: controller.isPackage.value,
-                    );
-                  })),
+                flex: 1,
+                child: CandidateWidget(
+                  organize: Organize.tpp,
+                  isPackage: isPackage!,
+                ),
+              ),
               const SizedBox(
                 width: 7,
               ),
               Expanded(
-                  flex: 1,
-                  child: Obx(() {
-                    return CandidateWidget(
-                      organize: Organize.dpp,
-                      isPackage: controller.isPackage.value,
-                    );
-                  })),
+                flex: 1,
+                child: CandidateWidget(
+                  organize: Organize.dpp,
+                  isPackage: isPackage!,
+                ),
+              ),
               const SizedBox(
                 width: 7,
               ),
               Expanded(
-                  flex: 1,
-                  child: Obx(() {
-                    return CandidateWidget(
-                      organize: Organize.kmt,
-                      isPackage: controller.isPackage.value,
-                    );
-                  })),
+                flex: 1,
+                child: CandidateWidget(
+                  organize: Organize.kmt,
+                  isPackage: isPackage!,
+                ),
+              ),
               const SizedBox(
                 width: 7,
               ),
@@ -104,7 +102,7 @@ class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
           Obx(() {
             final electionDataList =
                 controller.rxElectionData.value?.electionRowDataList;
-            return electionDataList==null || electionDataList.isEmpty
+            return electionDataList == null || electionDataList.isEmpty
                 ? const SizedBox.shrink()
                 : ListView.separated(
                     physics: const NeverScrollableScrollPhysics(),
