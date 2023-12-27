@@ -111,6 +111,7 @@ class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
                       return ListItemWidget(
                         index: index,
                         electionRowData: electionDataList[index],
+                        isPackage: isPackage!,
                       );
                     },
                     separatorBuilder: (context, index) {
@@ -127,16 +128,19 @@ class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
             ),
           ),
           const SizedBox(height: 4),
-          const Align(
+          Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              '最後更新時間：2024/1/13 00:00',
-              style: TextStyle(
-                fontSize: 11,
-                fontFamily: 'Noto Sans CJK TC',
-                color: Color(0xFF9B9B9B),
-              ),
-            ),
+            child: Obx(() {
+              final updateAt = controller.rxElectionData.value?.updateAt;
+              return Text(
+                '最後更新時間：$updateAt',
+                style: const TextStyle(
+                  fontSize: 11,
+                  fontFamily: 'Noto Sans CJK TC',
+                  color: Color(0xFF9B9B9B),
+                ),
+              );
+            }),
           ),
           const SizedBox(height: 24),
           InkWell(

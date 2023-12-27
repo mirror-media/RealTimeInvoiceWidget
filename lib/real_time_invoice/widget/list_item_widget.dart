@@ -4,10 +4,11 @@ import 'package:real_time_invoice_widget/model/election_row_data.dart';
 
 class ListItemWidget extends StatelessWidget {
   const ListItemWidget(
-      {super.key, required this.electionRowData, required this.index});
+      {super.key, required this.electionRowData, required this.index, required this.isPackage});
 
   final ElectionRowData electionRowData;
   final int index;
+  final bool isPackage;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class ListItemWidget extends StatelessWidget {
         Expanded(
           flex: 1,
           child: electionRowData.renderText[0] == '*'
-              ? Image.asset(ImagePath.electedIcon)
+              ? Image.asset(ImagePath.electedIcon,package: isPackage ? 'real_time_invoice_widget' : null)
               : Align(
                   alignment: Alignment.center,
                   child: Text(electionRowData.renderText[0],
@@ -37,7 +38,7 @@ class ListItemWidget extends StatelessWidget {
         Expanded(
           flex: 1,
           child: electionRowData.renderText[1] == '*'
-              ? Image.asset(ImagePath.electedIcon)
+              ? Image.asset(ImagePath.electedIcon,package: isPackage ? 'real_time_invoice_widget' : null)
               : Align(
                   alignment: Alignment.center,
                   child: Text(electionRowData.renderText[1],
@@ -50,7 +51,7 @@ class ListItemWidget extends StatelessWidget {
                   child: Image.asset(
                   ImagePath.electedIcon,
                   width: 17,
-                  height: 17,
+                  height: 17,package: isPackage ? 'real_time_invoice_widget' : null
                 ))
               : Align(
                   alignment: Alignment.center,
