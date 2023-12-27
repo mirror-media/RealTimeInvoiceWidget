@@ -17,13 +17,11 @@ class CandidateWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        imagePath == null
-            ? Container(
-                width: 40,
-                height: 40,
-                color: const Color(0xFFD9D9D9),
-              )
-            : Image.asset(imagePath!),
+        Image.network(
+          organize.candidatePictureUrl(),
+          width: 40,
+          height: 40,
+        ),
         const SizedBox(height: 14),
         SizedBox(
           width: 42,
