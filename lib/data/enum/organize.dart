@@ -48,4 +48,15 @@ extension OrganizeExtension on Organize {
         return ImagePath.number2Icon;
     }
   }
+
+  String candidatePictureUrl() {
+    switch (this) {
+      case Organize.tpp:
+        return 'https://storage.googleapis.com/whoareyou-gcs.readr.tw/person/%E6%9F%AF%E6%96%87%E5%93%B2.jpg';
+      case Organize.kmt:
+        return 'https://whoareyou-gcs.readr.tw/person/%E4%BE%AF%E5%8F%8B%E5%AE%9C.jpg';
+      case Organize.dpp:
+        return 'https://storage.googleapis.com/whoareyou-gcs.readr.tw/person/%E8%B3%B4%E6%B8%85%E5%BE%B7.jpg';
+    }
+  }
 }
