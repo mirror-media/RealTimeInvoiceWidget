@@ -8,7 +8,7 @@ class RealTimeInvoiceController extends GetxController {
   final Rxn<ElectionData> rxElectionData = Rxn();
   Timer? fetchDataTimer;
 
-
+  final RxnInt rxCurrentSelect = RxnInt();
 
   @override
   void onInit() async {
@@ -17,11 +17,23 @@ class RealTimeInvoiceController extends GetxController {
     fetchDataTimer = Timer.periodic(const Duration(seconds: 30), (Timer timer) {
       fetchElectionData();
     });
-
   }
 
   void fetchElectionData() async {
     rxElectionData.value = await electionDataProvider.getElectionData();
+    final listData = rxElectionData.value?.electionRowDataList;
+    if (listData == null) return;
+    for (var data in listData) {
+      if (data.key == '當選') {
+        for (int valueIndex = 0;
+            valueIndex < data.valueList.length;
+            valueIndex++) {
+          if (data.valueList[valueIndex] == '*') {
+            rxCurrentSelect.value = valueIndex;
+          }
+        }
+      }
+    }
   }
 
   @override
