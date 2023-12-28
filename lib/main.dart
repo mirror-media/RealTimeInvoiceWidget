@@ -5,8 +5,6 @@ import 'package:real_time_invoice_widget/real_time_invoice/real_time_invoice_wid
 
 void main() {
   runApp(const MyApp());
-
-
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +13,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -41,11 +38,11 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 28),
+            padding: const EdgeInsets.symmetric(horizontal: 28),
             child: RealTimeInvoiceWidget(
+              width: Get.width - 56,
             ),
           ),
-
         ],
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
