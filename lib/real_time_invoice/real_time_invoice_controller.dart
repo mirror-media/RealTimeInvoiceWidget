@@ -14,7 +14,7 @@ class RealTimeInvoiceController extends GetxController {
   void onInit() async {
     super.onInit();
     fetchElectionData();
-    fetchDataTimer = Timer.periodic(const Duration(seconds: 30), (Timer timer) {
+    fetchDataTimer = Timer.periodic(const Duration(minutes: 1), (Timer timer) {
       fetchElectionData();
     });
   }
