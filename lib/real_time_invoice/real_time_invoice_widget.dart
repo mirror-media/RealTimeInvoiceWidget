@@ -38,7 +38,7 @@ class RealTimeInvoiceWidget extends GetView<RealTimeInvoiceController> {
               top: 99 - 12,
               left: left,
               child: Container(
-                width: 80,
+                width: blockWidth,
                 height: 245,
                 color: const Color(0xEAEAEAEA),
               ),
