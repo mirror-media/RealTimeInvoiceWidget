@@ -21,11 +21,11 @@ class ElectionDataProvider extends GetConnect {
   ElectionDataProvider(String this.apiUrl);
 
   Future<ElectionData?> getElectionData() async {
-
     if (apiUrl == null) return null;
 
-    final response = await _client.get(Uri.parse(apiUrl!));
-
+    DateTime time = DateTime.now();
+    final response = await _client
+        .get(Uri.parse('$apiUrl?t=${time.millisecondsSinceEpoch}'));
     if (response.statusCode == 200) {
       String utf8Json = utf8.decode(response.bodyBytes);
       final Map<String, dynamic> data = json.decode(utf8Json);
