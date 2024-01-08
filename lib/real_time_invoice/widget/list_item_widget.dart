@@ -16,7 +16,7 @@ class ListItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle fontStyle = TextStyle(
-        fontSize: 14,
+        fontSize: 13,
         color: (index % 2 == 1)
             ? const Color(0xFF004EBC)
             : const Color(0xFF153047),
@@ -28,34 +28,33 @@ class ListItemWidget extends StatelessWidget {
           flex: 1,
           child: Text(
             electionRowData.key ?? '',
-            style: fontStyle,
+            style: fontStyle.copyWith(fontSize: 14),
           ),
         ),
         Expanded(
           flex: 1,
           child: electionRowData.renderText[0] == '*'
               ? Center(
-                child: Image.asset(ImagePath.electedIcon,
-                    package: isPackage ? 'real_time_invoice_widget' : null,
-                    width: 17,
-                    height: 17),
-              )
-              : Align(
-                  alignment: Alignment.center,
+                  child: Image.asset(ImagePath.electedIcon,
+                      package: isPackage ? 'real_time_invoice_widget' : null,
+                      width: 17,
+                      height: 17),
+                )
+              : Center(
                   child: Text(electionRowData.renderText[0], style: fontStyle)),
         ),
         Expanded(
           flex: 1,
           child: electionRowData.renderText[1] == '*'
               ? Center(
-                child: Image.asset(ImagePath.electedIcon,
-                    package: isPackage ? 'real_time_invoice_widget' : null,
-                    width: 17,
-                    height: 17),
-              )
-              : Align(
-                  alignment: Alignment.center,
-                  child: Text(electionRowData.renderText[1], style: fontStyle)),
+                  child: Image.asset(ImagePath.electedIcon,
+                      package: isPackage ? 'real_time_invoice_widget' : null,
+                      width: 17,
+                      height: 17),
+                )
+              : Center(
+                  child: Text(electionRowData.renderText[1], style: fontStyle),
+                ),
         ),
         Expanded(
           flex: 1,
