@@ -43,6 +43,9 @@ class ListItemWidget extends StatelessWidget {
               : Center(
                   child: Text(electionRowData.renderText[0], style: fontStyle)),
         ),
+        const SizedBox(
+          width: 7,
+        ),
         Expanded(
           flex: 1,
           child: electionRowData.renderText[1] == '*'
@@ -56,6 +59,9 @@ class ListItemWidget extends StatelessWidget {
                   child: Text(electionRowData.renderText[1], style: fontStyle),
                 ),
         ),
+        const SizedBox(
+          width: 7,
+        ),
         Expanded(
           flex: 1,
           child: electionRowData.renderText[2] == '*'
@@ -64,9 +70,14 @@ class ListItemWidget extends StatelessWidget {
                       width: 17,
                       height: 17,
                       package: isPackage ? 'real_time_invoice_widget' : null))
-              : Align(
-                  alignment: Alignment.center,
-                  child: Text(electionRowData.renderText[2], style: fontStyle)),
+              : Center(
+                  child: Text(
+                  electionRowData.renderText[2],
+                  style: fontStyle,
+                )),
+        ),
+        const SizedBox(
+          width: 7,
         )
       ],
     );
